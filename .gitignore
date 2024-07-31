@@ -8,9 +8,7 @@ build_openroad.log
 etc/InstallerOpenROAD.sh
 
 # Test working directories
-flow/results
-flow/logs
-flow/reports
+
 flow/objects
 flow/tech
 

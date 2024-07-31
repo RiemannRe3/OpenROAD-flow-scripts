@@ -1,0 +1,78 @@
+###############################################################################
+# Created by write_sdc
+# Tue Jun  4 15:29:24 2024
+###############################################################################
+current_design RGB2YUV_TOP
+###############################################################################
+# Timing Constraints
+###############################################################################
+create_clock -name Clock -period 0.1000 [get_ports {Clock}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[0]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[1]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[2]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[3]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[4]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[5]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[6]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[7]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[8]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Blue[9]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[0]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[1]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[2]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[3]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[4]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[5]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[6]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[7]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[8]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Green[9]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[0]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[1]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[2]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[3]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[4]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[5]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[6]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[7]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[8]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Red[9]}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Reset}]
+set_input_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {data_valid_in}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[0]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[1]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[2]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[3]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[4]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[5]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[6]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[7]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[8]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cb[9]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[0]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[1]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[2]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[3]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[4]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[5]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[6]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[7]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[8]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Cr[9]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[0]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[1]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[2]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[3]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[4]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[5]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[6]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[7]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[8]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {Y[9]}]
+set_output_delay 0.0200 -clock [get_clocks {Clock}] -add_delay [get_ports {data_valid_out}]
+###############################################################################
+# Environment
+###############################################################################
+###############################################################################
+# Design Rules
+###############################################################################
