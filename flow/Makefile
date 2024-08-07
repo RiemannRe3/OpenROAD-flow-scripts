@@ -565,6 +565,34 @@ $(eval $(call do-step,2_4_floorplan_macro,$(RESULTS_DIR)/2_3_floorplan_tdms.odb 
 
 $(eval $(call do-step,2_floorplan_debug_macros,$(RESULTS_DIR)/2_1_floorplan.odb $(RESULTS_DIR)/1_synth.v $(MACRO_PLACEMENT) $(MACRO_PLACEMENT_TCL),floorplan_debug_macros))
 
+# Mixed-size Placement:
+$(eval $(call do-step,2_3_place_mixgp,$(RESULTS_DIR)/2_2_floorplan_io.odb $(RESULTS_DIR)/1_synth.sdc $(LIB_FILES),mix_sized_gp))
+
+.PHONY: do-copy-mixsize
+do-copy-mixsize:
+	cp $(RESULTS_DIR)/2_3_place_mixgp.odb $(RESULTS_DIR)/2_4_floorplan_macro.odb
+
+.PHONY: do-mix-sized
+do-mix-sized:
+	$(UNSET_AND_MAKE) do-2_3_place_mixgp do-copy-mixsize do-2_5_floorplan_tapcell do-2_6_floorplan_pdn do-2_floorplan 
+
+.PHONY: do-mix-sized2
+do-mix-sized2:
+	$(UNSET_AND_MAKE) do-copy-mixsize2 do-3_4_place_resized do-3_5_place_dp do-3_place do-3_place.sdc 
+
+.PHONY: do-mixsized-place
+do-mixsized-place:
+	$(UNSET_AND_MAKE) do-copy-mixsize do-2_5_floorplan_tapcell do-2_6_floorplan_pdn do-2_floorplan do-copy-mixsize2 do-3_4_place_resized do-3_5_place_dp do-3_place do-3_place.sdc
+
+.PHONY: do-mixsizedflow
+do-mixsized-flow:
+	$(UNSET_AND_MAKE) do-mixsized-place do-cts do-route do-finish
+
+
+.PHONY: do-copy-mixsize2
+do-copy-mixsize2:
+	cp $(RESULTS_DIR)/2_floorplan.odb $(RESULTS_DIR)/3_3_place_gp.odb
+
 # STEP 5: Tapcell and Welltie insertion
 #-------------------------------------------------------------------------------
 $(eval $(call do-step,2_5_floorplan_tapcell,$(RESULTS_DIR)/2_4_floorplan_macro.odb $(TAPCELL_TCL),tapcell))
