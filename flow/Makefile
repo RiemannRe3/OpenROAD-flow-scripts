@@ -585,7 +585,7 @@ do-mixsized-place:
 	$(UNSET_AND_MAKE) do-copy-mixsize do-2_5_floorplan_tapcell do-2_6_floorplan_pdn do-2_floorplan do-copy-mixsize2 do-3_4_place_resized do-3_5_place_dp do-3_place do-3_place.sdc
 
 .PHONY: do-mixsizedflow
-do-mixsized-flow:
+do-mixsizedflow:
 	$(UNSET_AND_MAKE) do-mixsized-place do-cts do-route do-finish
 
 
